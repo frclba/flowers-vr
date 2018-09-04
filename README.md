@@ -1,15 +1,15 @@
-# Flowers-Vmr
+# Flowers Mixed Reality 
 
-##**Why:**
+## **Why:**
 
 This system aims to quickly spot which box includes what percentage of unhealthy flowers.
 
-##**What:**
+## **What:**
 
 They have several boxes with flowers. Their pattern is uniform when all flowers are healthy. However if there are dead flowers, that area on the box looks non-uniform.
 
 
-##**How:** 
+## **How:** 
 
 ![flower-system](doc/system.jpeg "flowers")
 
