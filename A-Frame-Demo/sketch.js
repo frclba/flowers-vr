@@ -15,9 +15,9 @@ function draw() {
   degrees = shiftDegrees(degrees);
 
   const color = `hsl(${degrees}, 100%, 50%)`;
-  // const color = "pink";
+  
   const variation = sin(theta);
-  const position = `-3 ${2.1 + variation} -2`;
+  const position = `-3 ${2.1 + variation} -3`;
   const rotation = `-90 0 ${degrees}`;
 
   sphere.attribute('color', color);

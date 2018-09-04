@@ -17,7 +17,7 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 ### Task List:
 
 - [X] Design Low fidelity Prototype images 
-- [ ] Translate conceptual text
+- [ ] Write conceptual text
 - [ ] Design High Fidelity prototype
 - [ ] Add Multiverse Code
 - [ ] Add boxes
@@ -28,3 +28,8 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 - [ ] Send for validation
 
 ![flower-factory](doc/factory.jpeg "factory")
+orredor com várias caixas modeladas em 3D. Cada caixa possui como a foto, algumas colunas com caixas menores de flores. Uma espécie de scanner analisa as caixas e retira informações como cor e saúde.
+
+Organiza-se as caixas por lote ou modelo, e o corredor seria como uma forma de visualizar a saúde das flores em cada caixa. As caixas passam por nós e se alguma estiver abaixo de um limite, era fica com cor vermelha ou algo do género.
+
+Fazemos a seleção com o olhar, e após olharmos para a caixa por mais de 3 segundos, aparecem informações como nome da flor, lote, saúde, etc. como uma forma de expandir informações em uma realidade aumentada. 
