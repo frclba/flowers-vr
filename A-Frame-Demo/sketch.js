@@ -7,7 +7,7 @@ const shiftDegrees = (value) => (value + 1) % 360;
 
 function setup() {
   sphere = select("#sphere");
-  plane = select("#plane");
+  // plane = select("#plane");
 }
 
 
@@ -23,8 +23,8 @@ function draw() {
   sphere.attribute('color', color);
   sphere.attribute('position', position);
 
-  plane.attribute('color', color);
-  plane.attribute('rotation', rotation);
+  // plane.attribute('color', color);
+  // plane.attribute('rotation', rotation);
 
   theta += 0.1;
 }

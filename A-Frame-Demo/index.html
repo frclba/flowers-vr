@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Flowers-Vr</title>
+  <meta name="description" content="V R Boxes.">
 
   <!-- p5.js files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
@@ -17,14 +18,29 @@
 
   <!-- p5 sketch -->
   <script src="sketch.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-
   <a-scene>
-    <a-sphere id="sphere"></a-sphere>
-    <a-plane id="plane" width="10" height="10" position="0 0 -3"></a-plane>
-    <a-entity position="" camera="active:false;userHeight:1.6" rotation="" aframe-injected="" data-aframe-inspector="default-camera"></a-entity>
+    <img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
+    <img id="sky" src="https://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous">
+
+    <a-entity 
+    position="0 0 0" 
+    geometry="primitive: plane; width: 10000; height: 10000;"
+    rotation="-90 0 0" 
+    material="src: #grid; repeat: 10000 10000; transparent: true; metalness: 0.6; roughness: 0.4; sphericalEnvMap: #sky;">
+    </a-entity>
+
+    <a-sky src="#sky" rotation = "0 -90 0"></a-sky>
+
+  <a-sphere id="sphere"></a-sphere>
+
+  <a-entity>
+      <a-camera></a-camera>
+    </a-entity>
+
   </a-scene>
 </body>
 
