@@ -14,7 +14,7 @@ With the informations available, now comes the visualization step. This whole sy
 
 This first part of the system is the one that understands the health percentage in a box of flowers or which kind of flower it is. Saving this information for later usage.
 
-Machine learning is growing as an important field of technology. It is known as a universal function aproximator. It works by giving the computer lots of examples and then adjusting the relationship between inputs and outputs. Being able to save a trained model is important because of the cost of the training process.
+Machine learning is growing as an important field of technology. It is known as a universal function aproximator. It works by giving the computer lots of examples and then adjusting the relationship between inputs and outputs. Being able to save the learning model is important because of the cost of the training process.
 
 For example, if we want to teach a neural network to classify a sunflower, we will take several sunflower-labeled pictures, insert them into a ML model which adjusts itself based on each pixel of an image. 
 
@@ -39,11 +39,13 @@ If the user selects the start option, the flowers begin running on on both side 
 *** 
 ### **The AR:**
 
-As a way of expanding information into an augmented reality system, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus feugiat massa, et hendrerit tortor mollis eget. 
+As a way of expanding information, we are aiming at an experience where the boxes are augmented by a generated model.
 
-Nulla ultricies mi in eros convallis, a mollis elit sagittis. Praesent tincidunt id sapien nec lobortis. Nunc gravida, odio non interdum tempus, est eros consequat lorem, sit amet finibus velit erat sed est.
+Into an augmented reality system the flower boxes are interactive. Making use of technology to expand horizons between human-computer interactions.
 
-Quisque id faucibus nulla, in porttitor risus. Etiam eget viverra nisi. Aenean efficitur tristique enim, ut viverra sem aliquet a. Aliquam erat volutpat. In ac euismod dui. Mauris non nisi tortor. Sed viverra pretium justo quis interdum. Aenean et auctor diam. Nam pretium ultrices massa at feugiat. 
+The value of this system is that it brings components of digital information into a user perception of the real world. And it's more than just simple display of data, it can expand observation of the flowers anywhere at anytime.
+
+The AR system will be used to enhance the other two systems. Offering sensitive experiences while adding object recognitions and making information about the flower boxes interactive and digitally manipulable.
 
 
 ![Augmented-Reality](doc/ar.jpg "Augmented Reality")
