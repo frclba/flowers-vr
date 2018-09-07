@@ -17,14 +17,14 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 ### Task List:
 
 - [X] Design Low fidelity Prototype images 
-- [X] Write conceptual text -
+- [X] Write conceptual text
 - [ ] Design High Fidelity prototype
 - [X] Add Multiverse Code
-- [ ] Add boxes
+- [X] Add boxes
 - [ ] Add track lanes
 - [ ] Move boxes
 - [ ] Add images/ 3d models -
-- [X] Deploy on Gh pages -
+- [X] Deploy on Gh pages
 - [ ] Send for validation 
 
 ![flower-factory](doc/factory.jpeg "factory")
