@@ -1,7 +1,7 @@
 class Box {
   constructor(color, position) {
     
-    this.color = #FFF;
+    this.color = '#FFF';
     this.position = position;
     this.sourceId = floor(random(1, 6));
     

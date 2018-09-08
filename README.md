@@ -23,8 +23,15 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 - [X] Add boxes
 - [ ] Add track lanes
 - [ ] Move boxes
-- [ ] Add images/ 3d models -
+- [X] Add images/ 3d models
 - [X] Deploy on Gh pages
 - [ ] Send for validation 
 
 ![flower-factory](doc/factory.jpeg "factory")
+
+
+# Thanks to:
+* https://github.com/aframevr/aframe/
+* https://github.com/processing/p5.js
+* https://github.com/DougReeder/aframe-simple-sun-sky
+
