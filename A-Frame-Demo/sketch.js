@@ -13,7 +13,7 @@ function preload(){
 }
 
 function setup() {
-  // spawn_boxes();
+  spawn_boxes();
   sphere = new Sphere(color(0, 0, 0), `-3 2.1 -3`);
 }
 
