@@ -1,11 +1,9 @@
-let sphere;
 let scene;
+
+let theta = 0, degrees = 0;
+let sphere;
 let box_arr = [];
 
-let theta = 0;
-let degrees = 0;
-
-const $ = (query) => document.querySelector(query);
 const shiftDegrees = (value) => (value + 1) % 360;
 
 function preload(){
@@ -15,6 +13,8 @@ function preload(){
 function setup() {
   spawn_boxes();
   sphere = new Sphere(color(0, 0, 0), `-3 2.1 -3`);
+
+  //TODO -> add lane, second row, move axis
 }
 
 
@@ -32,12 +32,12 @@ function draw() {
 }
 
 function spawn_boxes() {
-  let box_position = 0;
+  let box_position = 3;
 
   for (let i = 0; i < 33; i++) {
-    // let box_color = color(random(0, 255), random(0, 255), random(0, 255));
+    let box_color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
 
-    let newBox = new Box("#FFF", box_position);
+    let newBox = new Box(box_color, box_position);
     box_arr.push(newBox);
     
     box_position += 3;
@@ -47,6 +47,8 @@ function spawn_boxes() {
 
 class Box {
   constructor(color, position) {
+    //todo -> x, y, z
+    //velocity
 
     this.color = color;
     this.position = position;
@@ -64,6 +66,16 @@ class Box {
     this.position += variation;
     this.element.attribute('position', `3 1.5 -${this.position}`);
   }
+
+  //TODO ->
+  /*interface(){
+    gaze for 3 seconds
+    countdown
+    move to the center
+    desired - velocity
+    popup balloon
+    this plant is 20 % unhealthy
+   } */
 }
 
 class Sphere {
