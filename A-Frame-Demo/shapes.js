@@ -1,18 +1,20 @@
 class Box {
   constructor(color, position) {
-    this.color = color;
+    
+    this.color = #FFF;
     this.position = position;
-
+    this.sourceId = floor(random(1, 6));
+    
     this.element = createElement('a-box');
     this.element.attribute("position", `${this.position} 1.5  -3`);
     this.element.attribute("color", this.color);
+    this.element.attribute("src", `#tile${this.sourceId}`);
 
     scene.child(this.element);
   }
 
   move(variation) {
     this.position += variation;
-
     this.element.attribute('position', `${this.position} 1.5  -3`);
   }
 }

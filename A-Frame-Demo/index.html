@@ -15,7 +15,8 @@
 
   <!-- A-Frame files -->
   <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-  
+  <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.0/simple-sun-sky.js"></script>
+
   <!-- p5 sketch -->
   <script src="sketch.js"></script>
   <script src="shapes.js"></script>
@@ -29,7 +30,19 @@
     <a-assets>
       <img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
       <img id="sky" src="https://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous">
+
+      <img id="tile1" src="/doc/stock/tile1.jpeg">
+      <img id="tile2" src="/doc/stock/tile2.jpeg">
+      <img id="tile3" src="/doc/stock/tile3.jpeg">
+      <img id="tile4" src="/doc/stock/tile4.jpeg">
+      <img id="tile5" src="/doc/stock/tile5.jpeg">
+      <img id="tile6" src="/doc/stock/tile6.jpeg">
     </a-assets>
+    
+    <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0.7 0.4 -1"></a-entity>
+    
     
     <a-entity 
     position="0 0 0" 
@@ -37,8 +50,6 @@
     rotation="-90 0 0" 
     material="src: #grid; repeat: 10000 10000; transparent: true; metalness: 0.6; roughness: 0.4; sphericalEnvMap: #sky;">
     </a-entity>
-
-    <a-sky src="#sky" rotation = "0 -90 0"></a-sky>
 
     <a-entity>
       <a-camera>
