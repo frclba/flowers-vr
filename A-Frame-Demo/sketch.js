@@ -14,13 +14,13 @@ function setup() {
 
   let left_row_pos = {
     x: 3,
-    y: 1.5,
+    y: 0.81,
     z: -3
   };
 
   let right_row_pos = {
     x: -3,
-    y: 1.5,
+    y: 0.81,
     z: -3
   }
 
@@ -30,7 +30,7 @@ function setup() {
 
   sphere = new Sphere();
 
-  //TODO -> add lane, move axis
+  //TODO -> move axis
 }
 
 
@@ -74,7 +74,7 @@ class Box {
     this.color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
 
     this.element = createElement('a-box');
-    this.element.attribute("position", );
+    this.element.attribute("position", this.position);
     this.element.attribute("color", this.color);
     this.element.attribute("src", `#tile${this.sourceId}`);
 
