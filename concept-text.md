@@ -34,7 +34,7 @@ Initially, the user has 3 options: Start, Stop, Or choose a box.
 
 If the user selects the start option, the flowers begin running on on both side tracks. If the user gaze at the stop option, the tracks stop. And if the user gaze at a specific box for more than 3 seconds, then the system brings this chosen box for a closer observation, moving it to the front and opening a secondary interface with all the data about the box of flowers.
 
-![Virtual-Reality](doc/vr.jpg "Virtual Reality")
+![Virtual-Reality](doc/Screenshot.png "Virtual Reality")
 
 *** 
 ### **The AR:**

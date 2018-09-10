@@ -19,7 +19,6 @@
   
   <!-- p5 sketch -->
   <script src="sketch.js"></script>
-
 </head>
 
 <body>
@@ -37,12 +36,15 @@
       <img id="tile6" src="tile6.jpeg" crossorigin="anonymous">
     </a-assets>
     
-    <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
-    <!-- <a-sky src="#sky" rotation="0 -90 0"></a-sky> -->
+    <!-- SKY -->
+    <!-- <a-simple-sun-sky id="daytime" sun-position="0.7 0.4 -1"></a-simple-sun-sky> -->
+    <a-sky id= "nighttime" src="#sky" rotation="0 -90 0"></a-sky> 
+
+    <!-- Sunlight -->
     <a-entity light="type: ambient; color: #BBB"></a-entity>
-    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0.7 0.4 -1"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0.7 0.4 -1"></a-entity>    
     
-    
+    <!-- Floor Textures -->
     <a-entity 
     position="0 0 0" 
     geometry="primitive: plane; width: 10000; height: 10000;"
@@ -50,14 +52,16 @@
     material="src: #grid; repeat: 10000 10000; transparent: true; metalness: 0.6; roughness: 0.4; sphericalEnvMap: #sky;">
     </a-entity>
 
+    <!-- CAMERA -->
     <a-entity>
       <a-camera>
-        <a-cursor color="pink"></a-cursor>
+        <a-cursor color="rgb(0, 255, 0)"></a-cursor>
       </a-camera>
     </a-entity>
 
-    <a-box position="3 0.15 0" color="gray" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box>
-    <a-box position="-3 0.15 0" color="gray" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box> 
+    <!-- LANES -->
+    <a-box position="3 0.15 0" color="#a9a9a9" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box>
+    <a-box position="-3 0.15 0" color="#a9a9a9" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box> 
  
   </a-scene>
 </body>

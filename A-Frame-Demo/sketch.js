@@ -6,10 +6,13 @@ let box_arr = [];
 
 const shiftDegrees = (value) => (value + 1) % 360;
 
+//RUN BEFORE EVERYTHING
 function preload(){
    scene = select('a-scene');
 }
 
+
+// SETUP -> RUN ONCE
 function setup() {
 
   let left_row_pos = {
@@ -28,39 +31,36 @@ function setup() {
   spawn_boxes(right_row_pos);
 
 
-  sphere = new Sphere();
+  // sphere = new Sphere();
 
   //TODO -> move axis
 }
 
 
+// DRAW -> WHILE(1) LOOP
 function draw() {
   const variation = sin(theta);
   degrees = shiftDegrees(degrees);
-
-  sphere.move(variation);
-
+  // sphere.move(variation);
   box_arr.forEach(box => {
     box.move(variation * 0.01);
   });
-
   theta += 0.1;
 }
 
-function spawn_boxes(position) {
-  
+
+// CREATE BOX
+function spawn_boxes(position) {  
   let box_position = position;
-
   for (let i = 0; i < 10; i++) {
-
     let newBox = new Box(box_position);
     box_arr.push(newBox);
-    
     box_position.z -= 3;
   }
 }
 
 
+//CLASSES DEFINITION
 class Box {
   constructor(pos) {
     //TODO -> velocity
