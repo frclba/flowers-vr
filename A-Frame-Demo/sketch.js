@@ -11,10 +11,26 @@ function preload(){
 }
 
 function setup() {
-  spawn_boxes();
-  sphere = new Sphere(color(0, 0, 0), `-3 2.1 -3`);
 
-  //TODO -> add lane, second row, move axis
+  let left_row_pos = {
+    x: 3,
+    y: 1.5,
+    z: -3
+  };
+
+  let right_row_pos = {
+    x: -3,
+    y: 1.5,
+    z: -3
+  }
+
+  spawn_boxes(left_row_pos);
+  spawn_boxes(right_row_pos);
+
+
+  sphere = new Sphere();
+
+  //TODO -> add lane, move axis
 }
 
 
@@ -31,31 +47,34 @@ function draw() {
   theta += 0.1;
 }
 
-function spawn_boxes() {
-  let box_position = 3;
+function spawn_boxes(position) {
+  
+  let box_position = position;
 
-  for (let i = 0; i < 33; i++) {
-    let box_color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
+  for (let i = 0; i < 10; i++) {
 
-    let newBox = new Box(box_color, box_position);
+    let newBox = new Box(box_position);
     box_arr.push(newBox);
     
-    box_position += 3;
+    box_position.z -= 3;
   }
 }
 
 
 class Box {
-  constructor(color, position) {
-    //todo -> x, y, z
-    //velocity
-
-    this.color = color;
-    this.position = position;
+  constructor(pos) {
+    //TODO -> velocity
+    this.x = pos.x;
+    this.y = pos.y;
+    this.z = pos.z;
+    
+    this.position = `${this.x} ${this.y} ${this.z}`;
+    
     this.sourceId = floor(random(1, 6));
+    this.color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
 
     this.element = createElement('a-box');
-    this.element.attribute("position", `3 1.5 -${this.position}`);
+    this.element.attribute("position", );
     this.element.attribute("color", this.color);
     this.element.attribute("src", `#tile${this.sourceId}`);
 
@@ -63,8 +82,8 @@ class Box {
   }
 
   move(variation) {
-    this.position += variation;
-    this.element.attribute('position', `3 1.5 -${this.position}`);
+    this.z += variation;
+    this.element.attribute('position', `${this.x} ${this.y} ${this.z}`);
   }
 
   //TODO ->
@@ -79,13 +98,13 @@ class Box {
 }
 
 class Sphere {
-  constructor(color, position) {
-    this.color = color || color(0, 0, 0);
-    this.position = position || `-3 ${2.1} -3`;
+  constructor() {
+    this.color = color(0, 0, 0);
+    this.position = `-1.5 2.1 -15`;
 
     this.element = createElement('a-sphere');
     this.element.attribute('color', color);
-    this.element.attribute('position', position);
+    this.element.attribute('position', this.position);
 
     scene.child(this.element);
   }
@@ -93,7 +112,7 @@ class Sphere {
 
   move(variation) {
     const color = `hsl(${degrees}, 100%, 50%)`;
-    const position = `-3 ${2.1 + variation} -3`;
+    const position = `0 ${2.1 + variation} -15`;
 
     this.element.attribute('position', position);
     this.element.attribute('color', color)
