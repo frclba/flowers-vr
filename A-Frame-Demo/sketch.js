@@ -1,70 +1,72 @@
 let scene;
 
+const variation = 0.09;
 let theta = 0, degrees = 0;
-let sphere;
-let left_box_arr = [];
-let right_box_arr = [];
+
+let box_arr = [];
 
 const shiftDegrees = (value) => (value + 1) % 360;
 
-//RUN BEFORE EVERYTHING
+/*
+  RUN BEFORE EVERYTHING
+*/
 function preload(){
    scene = select('a-scene');
 }
 
 
-// SETUP -> RUN ONCE
-function setup() {
+/*
+ SETUP 
+ RUN ONCE
+*/
+ function setup() {
 
   let left_row_initial_pos = {
-    x: 3,
+    x: 6,
     y: 0.81,
     z: -3
   };
 
   let right_row_initial_pos = {
-    x: -3,
+    x: -6,
     y: 0.81,
     z: -3
   }
 
-  left_box_arr = spawn_boxes(left_row_initial_pos);
-  right_box_arr =  spawn_boxes(right_row_initial_pos);
-
-
-  // sphere = new Sphere();
-  //TODO -> move axis
+  spawn_boxes(left_row_initial_pos);
+  spawn_boxes(right_row_initial_pos);
 }
 
 
-const variation = 0.09;
-// DRAW -> WHILE(1) LOOP
+/* 
+  DRAW  
+  WHILE(1) LOOP
+*/
 function draw() {
-  // sphere.move(variation);
-  left_box_arr.forEach(left_box => {
-    left_box.move(variation)
-  });
-  right_box_arr.forEach(right_box => {
-    right_box.move(variation * 0.6);
+  let frames = frameRate();
+  box_arr.forEach(box => {
+    // box.move(variation * 0.001 * frames);
   });
 }
 
 
-// CREATE BOX
+/*
+ CREATE BOXES
+ PUSH TO ARRAY
+*/
 function spawn_boxes(position) {  
-  let box_arr = [];
   let box_position = position;
  
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 1; i++) {
     let newBox = new Box(box_position);
     box_arr.push(newBox);
     box_position.z -= 3;
   }
-  return box_arr;
 }
 
-
-//CLASSES DEFINITION
+/* 
+  BOX CLASS DEFINITION
+*/
 class Box {
   constructor(pos) {
     this.pos = {
@@ -89,7 +91,7 @@ class Box {
     this.element.attribute('position', this.positionString);
     
     if(this.pos.z >= 33) {
-      this.pos.z = -33;
+      this.pos.z *= -1;
     }
   }
   //TODO ->
@@ -114,7 +116,6 @@ class Sphere {
 
     scene.child(this.element);
   }
-
 
   move(variation) {
     const color = `hsl(${degrees}, 100%, 50%)`;
