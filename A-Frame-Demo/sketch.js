@@ -12,10 +12,9 @@ const shiftDegrees = (value) => (value + 1) % 360;
   RUN BEFORE EVERYTHING
 */
 function preload(){
-  scene = select('a-scene');
+  scene = document.querySelector('a-scene');
   dropdown = select("#dropdownContainer");
 }
-
 
 /*
  SETUP
@@ -78,18 +77,18 @@ class Box {
     };
 
     this.sourceId = floor(random(1, 6));
-    this.color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
+    this.color = color(random(0, 255), random(0, 255), random(0, 255));
 
-    this.element = createElement('a-box');
-    this.element.attribute("color", this.color);
-    this.element.attribute("src", `#tile${this.sourceId}`);
-    scene.child(this.element);
+    this.element = document.createElement('a-box');
+    this.element.setAttribute("color", this.color);
+    this.element.setAttribute("src", `#tile${this.sourceId}`);
+    scene.appendChild(this.element);
   }
 
   move(variation) {
     this.pos.z += variation;
     this.positionString = `${this.pos.x} ${this.pos.y} ${this.pos.z}`;
-    this.element.attribute('position', this.positionString);
+    this.element.setAttribute('position', this.positionString);
 
     if(this.pos.z >= 33) {
       this.pos.z *= -1;
@@ -111,11 +110,11 @@ class Sphere {
     this.color = color(0, 0, 0);
     this.position = `-1.5 2.1 -15`;
 
-    this.element = createElement('a-sphere');
-    this.element.attribute('color', color);
-    this.element.attribute('position', this.position);
+    this.element = document.createElement('a-sphere');
+    this.element.setAttribute('color', color);
+    this.element.setAttribute('position', this.position);
 
-    scene.child(this.element);
+    scene.appendChild(this.element);
   }
 
   move(variation) {
