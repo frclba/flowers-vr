@@ -1,6 +1,7 @@
 let scene;
+let dropdown;
 
-const variation = 0.09;
+const variation = 0.00;
 let theta = 0, degrees = 0;
 
 let box_arr = [];
@@ -11,12 +12,13 @@ const shiftDegrees = (value) => (value + 1) % 360;
   RUN BEFORE EVERYTHING
 */
 function preload(){
-   scene = select('a-scene');
+  scene = select('a-scene');
+  dropdown = select("#dropdownContainer");
 }
 
 
 /*
- SETUP 
+ SETUP
  RUN ONCE
 */
  function setup() {
@@ -38,14 +40,14 @@ function preload(){
 }
 
 
-/* 
-  DRAW  
+/*
+  DRAW
   WHILE(1) LOOP
 */
 function draw() {
   let frames = frameRate();
   box_arr.forEach(box => {
-    // box.move(variation * 0.001 * frames);
+    box.move(variation * 0.001 * frames);
   });
 }
 
@@ -54,17 +56,17 @@ function draw() {
  CREATE BOXES
  PUSH TO ARRAY
 */
-function spawn_boxes(position) {  
+function spawn_boxes(position) {
   let box_position = position;
- 
-  for (let i = 0; i < 1; i++) {
+
+  for (let i = 0; i < 3 ; i++) {
     let newBox = new Box(box_position);
     box_arr.push(newBox);
     box_position.z -= 3;
   }
 }
 
-/* 
+/*
   BOX CLASS DEFINITION
 */
 class Box {
@@ -74,22 +76,21 @@ class Box {
       y: pos.y,
       z: pos.z
     };
-    
+
     this.sourceId = floor(random(1, 6));
     this.color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
 
     this.element = createElement('a-box');
     this.element.attribute("color", this.color);
     this.element.attribute("src", `#tile${this.sourceId}`);
-
     scene.child(this.element);
   }
-  
+
   move(variation) {
     this.pos.z += variation;
     this.positionString = `${this.pos.x} ${this.pos.y} ${this.pos.z}`;
     this.element.attribute('position', this.positionString);
-    
+
     if(this.pos.z >= 33) {
       this.pos.z *= -1;
     }
