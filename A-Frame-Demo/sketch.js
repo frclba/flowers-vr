@@ -2,7 +2,8 @@ let scene;
 
 let theta = 0, degrees = 0;
 let sphere;
-let box_arr = [];
+let left_box_arr = [];
+let right_box_arr = [];
 
 const shiftDegrees = (value) => (value + 1) % 360;
 
@@ -15,77 +16,82 @@ function preload(){
 // SETUP -> RUN ONCE
 function setup() {
 
-  let left_row_pos = {
+  let left_row_initial_pos = {
     x: 3,
     y: 0.81,
     z: -3
   };
 
-  let right_row_pos = {
+  let right_row_initial_pos = {
     x: -3,
     y: 0.81,
     z: -3
   }
 
-  spawn_boxes(left_row_pos);
-  spawn_boxes(right_row_pos);
+  left_box_arr = spawn_boxes(left_row_initial_pos);
+  right_box_arr =  spawn_boxes(right_row_initial_pos);
 
 
   // sphere = new Sphere();
-
   //TODO -> move axis
 }
 
 
+const variation = 0.09;
 // DRAW -> WHILE(1) LOOP
 function draw() {
-  const variation = sin(theta);
-  degrees = shiftDegrees(degrees);
   // sphere.move(variation);
-  box_arr.forEach(box => {
-    box.move(variation * 0.01);
+  left_box_arr.forEach(left_box => {
+    left_box.move(variation)
   });
-  theta += 0.1;
+  right_box_arr.forEach(right_box => {
+    right_box.move(variation * 0.6);
+  });
 }
 
 
 // CREATE BOX
 function spawn_boxes(position) {  
+  let box_arr = [];
   let box_position = position;
-  for (let i = 0; i < 10; i++) {
+ 
+  for (let i = 0; i < 9; i++) {
     let newBox = new Box(box_position);
     box_arr.push(newBox);
     box_position.z -= 3;
   }
+  return box_arr;
 }
 
 
 //CLASSES DEFINITION
 class Box {
   constructor(pos) {
-    //TODO -> velocity
-    this.x = pos.x;
-    this.y = pos.y;
-    this.z = pos.z;
-    
-    this.position = `${this.x} ${this.y} ${this.z}`;
+    this.pos = {
+      x: pos.x,
+      y: pos.y,
+      z: pos.z
+    };
     
     this.sourceId = floor(random(1, 6));
     this.color = color(random(0, 255), random(0, 255), random(0, 255), random(0, 1));
 
     this.element = createElement('a-box');
-    this.element.attribute("position", this.position);
     this.element.attribute("color", this.color);
     this.element.attribute("src", `#tile${this.sourceId}`);
 
     scene.child(this.element);
   }
-
+  
   move(variation) {
-    this.z += variation;
-    this.element.attribute('position', `${this.x} ${this.y} ${this.z}`);
+    this.pos.z += variation;
+    this.positionString = `${this.pos.x} ${this.pos.y} ${this.pos.z}`;
+    this.element.attribute('position', this.positionString);
+    
+    if(this.pos.z >= 33) {
+      this.pos.z = -33;
+    }
   }
-
   //TODO ->
   /*interface(){
     gaze for 3 seconds

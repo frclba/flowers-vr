@@ -20,14 +20,18 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 
 - [X] Design Low fidelity Prototype images 
 - [X] Write conceptual text
-- [ ] Design High Fidelity prototype
 - [X] Add Multiverse Code
 - [X] Add boxes
-- [ ] Add track lanes
-- [ ] Move boxes
+- [X] Add track lanes
 - [X] Add images/ 3d models
 - [X] Deploy on Gh pages
-- [ ] Send for validation 
+- [X] Move boxes on z axis
+- [ ] Add plane on z = 33
+- [ ] Design High Fidelity prototype Image
+- [ ] Add box interactions
+- [ ] Add start/stop buttons
+- [ ] Add day/night buttons
+- [ ] Send for validation
 
 ![flower-factory](doc/factory.jpeg "factory")
 
