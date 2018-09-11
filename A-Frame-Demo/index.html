@@ -61,12 +61,15 @@
     <a-box position="6 0.15 0" color="#a9a9a9" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box>
     <a-box position="-6 0.15 0" color="#a9a9a9" depth="99" height="1" width="0.6" geometry="height:0.27;width:0.111"></a-box>
 
+
+
+    <!-- DROPDOWN -->
     <a-entity position="2 1.5 -4" rotation="0 0 0">
       <a-entity id="dropdownContainer" position="0 0 -1">
 
         <a-gui-flex-container flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
           opacity="0" width="2.5" height="0.75" position="0 0.375 0" rotation="0 0 0">
-          <a-gui-icon-label-button width="1" height="0.75" onclick="openDropdown" icon="android-menu" value="info"
+          <a-gui-icon-label-button width="0.9" height="0.75" onclick="openDropdown" value=" "
             font-family="Arial" visible="true">
             <a-animation attribute="rotation" id="dropani" begin="opendropdown" dur="1000" fill="forwards" to="180 0 0"></a-animation>
             <a-animation attribute="visible" id="dropani1" begin="opendropdown" fill="forwards" delay="500" to="false"></a-animation>
@@ -76,14 +79,14 @@
         </a-gui-flex-container>
 
         <a-gui-flex-container flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1"
-          opacity="0" width="2.5" height="0.75" position="0 0 -0.15" rotation="0 0 0" scale="1 0.001 0.001" visible="false">
-          <a-gui-button width="2.5" height="0.75" onclick="red" value="Red" font-family="Arial">
+          opacity="0" width="3.6" height="0.66" position="0 0 -0.15" rotation="0 0 0" scale="1 0.001 0.001" visible="false">
+          <a-gui-button width="3.6" height="0.66" onclick="red" value="This is a Rose" font-family="Arial">
           </a-gui-button>
-          <a-gui-button width="2.5" height="0.75" onclick="blue" value="Blue" font-family="Arial">
+          <a-gui-button width="3.6" height="0.66" onclick="blue" value="20% of the flowers are damaged." font-family="Arial" font-size="36pt">
           </a-gui-button>
-          <a-gui-button width="2.5" height="0.75" onclick="green" value="Green" font-family="Arial">
+          <a-gui-button width="3.6" height="0.66" onclick="green" value="More INFO: " font-family="Arial">
           </a-gui-button>
-          <a-gui-icon-button width="0.5" height="0.5" onclick="closeDropdown" icon="android-close">
+          <a-gui-icon-button width="0.6" height="0.6" onclick="closeDropdown" value="X">
           </a-gui-icon-button>
 
           <a-animation attribute="scale" id="dropvalani" begin="opendropdown" dur="1000" fill="forwards" to="1 1 1"></a-animation>

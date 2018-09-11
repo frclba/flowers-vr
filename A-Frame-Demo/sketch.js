@@ -1,7 +1,7 @@
 let scene;
 let dropdown;
 
-const variation = 0.00;
+const variation = 0.01;
 let theta = 0, degrees = 0;
 
 let box_arr = [];
@@ -47,7 +47,7 @@ function preload(){
 function draw() {
   let frames = frameRate();
   box_arr.forEach(box => {
-    box.move(variation * 0.001 * frames);
+    box.move(variation * 0.01 * frames);
   });
 }
 
@@ -59,7 +59,7 @@ function draw() {
 function spawn_boxes(position) {
   let box_position = position;
 
-  for (let i = 0; i < 3 ; i++) {
+  for (let i = 0; i < 15 ; i++) {
     let newBox = new Box(box_position);
     box_arr.push(newBox);
     box_position.z -= 3;
