@@ -13,7 +13,6 @@ const shiftDegrees = (value) => (value + 1) % 360;
 */
 function preload(){
   scene = document.querySelector('a-scene');
-  dropdown = select("#dropdownContainer");
 }
 
 /*
@@ -82,13 +81,14 @@ class Box {
     this.element = document.createElement('a-box');
     this.element.setAttribute("color", this.color);
     this.element.setAttribute("src", `#tile${this.sourceId}`);
+    
     scene.appendChild(this.element);
   }
 
   move(variation) {
     this.pos.z += variation;
-    this.positionString = `${this.pos.x} ${this.pos.y} ${this.pos.z}`;
-    this.element.setAttribute('position', this.positionString);
+    let positionString = `${this.pos.x} ${this.pos.y} ${this.pos.z}`;
+    this.element.setAttribute('position', positionString);
 
     if(this.pos.z >= 33) {
       this.pos.z *= -1;

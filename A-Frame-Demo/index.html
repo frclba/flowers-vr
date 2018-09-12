@@ -64,7 +64,7 @@
 
 
     <!-- DROPDOWN -->
-    <a-entity position="2 1.5 -4" rotation="0 0 0">
+    <a-entity position="3 1.5 -3" rotation="0 0 0">
       <a-entity id="dropdownContainer" position="0 0 -1">
 
         <a-gui-flex-container flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
@@ -80,11 +80,11 @@
 
         <a-gui-flex-container flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1"
           opacity="0" width="3.6" height="0.66" position="0 0 -0.15" rotation="0 0 0" scale="1 0.001 0.001" visible="false">
-          <a-gui-button width="3.6" height="0.66" onclick="red" value="This is a Rose" font-family="Arial">
+          <a-gui-button width="3.6" height="0.66" onclick="red" value="This is a Sunflower Box" font-family="Arial">
           </a-gui-button>
-          <a-gui-button width="3.6" height="0.66" onclick="blue" value="20% of the flowers are damaged." font-family="Arial" font-size="36pt">
+          <a-gui-button width="3.6" height="0.66" onclick="blue" value="21% of these flowers are damaged." font-family="Arial" font-size="45pt">
           </a-gui-button>
-          <a-gui-button width="3.6" height="0.66" onclick="green" value="More INFO: " font-family="Arial">
+          <a-gui-button width="3.6" height="0.66" onclick="green" value="See Details" font-family="Arial">
           </a-gui-button>
           <a-gui-icon-button width="0.6" height="0.6" onclick="closeDropdown" value="X">
           </a-gui-icon-button>
@@ -106,48 +106,39 @@
   </a-scene>
 
   <script>
-    window.closeDropdown = function () {
+    window.closeDropdown = (() => {
       // console.log("closedropdown");
-      var animateDropdown = document.getElementById("dropaniback");
+      let animateDropdown = document.getElementById("dropaniback");
       animateDropdown.emit('closedropdown');
-      var animateDropdown1 = document.getElementById("dropani1back");
+      let animateDropdown1 = document.getElementById("dropani1back");
       animateDropdown1.emit('closedropdown');
-      var animateDropdownVal = document.getElementById("dropvalaniback");
-      var animateDropdownVal1 = document.getElementById("dropvalani1back");
-      var animateDropdownVal2 = document.getElementById("dropvalani2back");
+
+      let animateDropdownVal = document.getElementById("dropvalaniback");
+      let animateDropdownVal1 = document.getElementById("dropvalani1back");
+      let animateDropdownVal2 = document.getElementById("dropvalani2back");
+
       animateDropdownVal.emit('closedropdown');
       animateDropdownVal1.emit('closedropdown');
       animateDropdownVal2.emit('closedropdown');
-    }
+    });
 
-    window.openDropdown = function () {
+    window.openDropdown = (() => {
       // console.log("opendropdown");
-      var animateDropdown = document.getElementById("dropani");
+      let animateDropdown = document.getElementById("dropani");
       animateDropdown.emit('opendropdown');
-      var animateDropdown1 = document.getElementById("dropani1");
+      let animateDropdown1 = document.getElementById("dropani1");
       animateDropdown1.emit('opendropdown');
-      var animateDropdownVal = document.getElementById("dropvalani");
-      var animateDropdownVal1 = document.getElementById("dropvalani1");
-      var animateDropdownVal2 = document.getElementById("dropvalani2");
+
+      let animateDropdownVal = document.getElementById("dropvalani");
+      let animateDropdownVal1 = document.getElementById("dropvalani1");
+      let animateDropdownVal2 = document.getElementById("dropvalani2");
+
       animateDropdownVal.emit('opendropdown');
       animateDropdownVal1.emit('opendropdown');
       animateDropdownVal2.emit('opendropdown');
-    }
+    });
 
-    // window.red = function () {
-    //   var knot = document.getElementById("knot");
-    //   knot.setAttribute('material', 'color', '#DC2531');
-    // }
-    // window.green = function () {
-    //   var knot = document.getElementById("knot");
-    //   knot.setAttribute('material', 'color', '#69FFD2');
-    // }
-    // window.blue = function () {
-    //   var knot = document.getElementById("knot");
-    //   knot.setAttribute('material', 'color', '#1FA4E9');
-    // }
   </script>
-
 </body>
 
 </html>
