@@ -48,4 +48,4 @@ The value of this system is that it brings components of digital information int
 The AR system will be used to enhance the other two systems. Offering sensitive experiences while adding object recognitions and making information about the flower boxes interactive and digitally manipulable.
 
 
-![Augmented-Reality](doc/ar.jpg "Augmented Reality")
+![Augmented-Reality](doc/flowers-vr-interface.gif "Augmented Reality")
