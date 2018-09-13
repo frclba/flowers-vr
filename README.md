@@ -33,11 +33,12 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 - [ ] Add day/night buttons
 - [ ] Send for validation
 
-![flower-factory](doc/factory.jpeg "factory")
+![flower-factory](doc/flowers-vr-interface.gif "interface")
 
 
 # Thanks to:
 * https://github.com/aframevr/aframe/
 * https://github.com/processing/p5.js
 * https://github.com/DougReeder/aframe-simple-sun-sky
+* https://github.com/rdub80/aframe-gui
 
