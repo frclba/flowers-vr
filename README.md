@@ -1,6 +1,6 @@
 # Flowers Mixed Reality 
 
-[Demo](https://fernand0aguilar.github.io/flowers-vr/A-Frame-Demo/)
+[Demo](https://fernand0aguilar.github.io/flowers-vr/prototype)
 
 ## **Why:**
 
@@ -26,12 +26,11 @@ They have several boxes with flowers. Their pattern is uniform when all flowers 
 - [X] Add images/ 3d models
 - [X] Deploy on Gh pages
 - [X] Move boxes on z axis
-- [ ] Add plane on z = 33
-- [ ] Design High Fidelity prototype Image
+- [X] Design High Fidelity prototype Image
 - [ ] Add box interactions
 - [ ] Add start/stop buttons
 - [ ] Add day/night buttons
-- [ ] Send for validation
+- [X] Send for validation
 
 ![flower-factory](doc/flowers-vr-interface.gif "interface")
 
